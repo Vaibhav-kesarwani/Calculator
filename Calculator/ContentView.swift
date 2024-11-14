@@ -31,7 +31,11 @@ enum CalcButton: String {
 
 struct ContentView: View {
     let buttons: [[CalcButton]] = [
-        [.seven, .eight, .nine]
+        [.clear, .negative, .percent, .divide],
+        [.seven, .eight, .nine, .multiply],
+        [.four, .five, .six, .substract],
+        [.one, .two, .three, .add],
+        [.zero, .decimal, .equal],
     ]
     
     var body: some View {
