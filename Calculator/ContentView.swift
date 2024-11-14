@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum CalcButton {
+enum CalcButton: String {
     case one
     case two
     case three
