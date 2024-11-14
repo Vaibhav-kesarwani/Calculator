@@ -42,6 +42,8 @@ struct ContentView: View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
             VStack {
+                Spacer()
+                
                 // Text display
                 HStack {
                     Spacer()
@@ -65,12 +67,12 @@ struct ContentView: View {
                                     .bold()
                                     .frame(
                                         width: self.buttonWidth(item: item),
-                                        height: 70
+                                        height: self.buttonHeight()
                                     )
                                     .background(Color.orange)
                                     .foregroundColor(.white)
                                     .foregroundColor(.white)
-                                    .cornerRadius(35)
+                                    .cornerRadius(self.buttonWidth(item: item) / 2)
                             })
                         }
                     }
@@ -84,7 +86,9 @@ struct ContentView: View {
         return (UIScreen.main.bounds.width - (5 * 12)) / 4
     }
     
-    
+    func buttonHeight() -> CGFloat {
+        return (UIScreen.main.bounds.width - (5 * 12)) / 4
+    }
 }
 
 #Preview {
