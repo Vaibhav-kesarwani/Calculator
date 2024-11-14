@@ -23,9 +23,10 @@ enum CalcButton: String {
     case divide = "/"
     case multiply = "*"
     case equal = "="
+    case clear = "AC"
     case decimal = "."
     case percent = "%"
-    case negative = "-"
+    case negative = "-/+"
 }
 
 struct ContentView: View {
