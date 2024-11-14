@@ -75,6 +75,10 @@ struct ContentView: View {
             }
         }
     }
+    
+    func buttonWidth(item: ClacButton) -> CGFloat {
+        return (UIScreen.main.bounds.width - (5 * 12)) / 4
+    }
 }
 
 #Preview {
