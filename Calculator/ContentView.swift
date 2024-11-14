@@ -55,7 +55,7 @@ struct ContentView: View {
                 
                 // Our buttons
                 ForEach(buttons, id: \.self) { row in
-                    HStack {
+                    HStack(spacing: 12) {
                         ForEach(row, id: \.self) { item in
                             Button(action: {
                                 
@@ -63,7 +63,10 @@ struct ContentView: View {
                                 Text(item.rawValue)
                                     .font(.system(size: 32))
                                     .bold()
-                                    .frame(width: 70, height: 70)
+                                    .frame(
+                                        width: self.buttonWidth(item: item),
+                                        height: 70
+                                    )
                                     .background(Color.orange)
                                     .foregroundColor(.white)
                                     .foregroundColor(.white)
@@ -71,14 +74,17 @@ struct ContentView: View {
                             })
                         }
                     }
+                    .padding(.bottom, 3)
                 }
             }
         }
     }
     
-    func buttonWidth(item: ClacButton) -> CGFloat {
+    func buttonWidth(item: CalcButton) -> CGFloat {
         return (UIScreen.main.bounds.width - (5 * 12)) / 4
     }
+    
+    
 }
 
 #Preview {
