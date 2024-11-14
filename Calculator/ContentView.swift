@@ -50,17 +50,19 @@ struct ContentView: View {
                 
                 // Our buttons
                 ForEach(buttons, id: \.self) { row in
-                    ForEach(row, id: \.self) { item in
-                        Button(action: {
-                            
-                        }, label: {
-                            Text(item.rawValue)
-                                .frame(width: 70, height: 70)
-                                .background(Color.orange)
-                                .foregroundColor(.white)
-                                .foregroundColor(.white)
-                                .cornerRadius(35)
-                        })
+                    HStack {
+                        ForEach(row, id: \.self) { item in
+                            Button(action: {
+                                
+                            }, label: {
+                                Text(item.rawValue)
+                                    .frame(width: 70, height: 70)
+                                    .background(Color.orange)
+                                    .foregroundColor(.white)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(35)
+                            })
+                        }
                     }
                 }
             }
