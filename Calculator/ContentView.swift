@@ -57,6 +57,8 @@ struct ContentView: View {
                                 
                             }, label: {
                                 Text(item.rawValue)
+                                    .font(.system(size: 32))
+                                    .bold()
                                     .frame(width: 70, height: 70)
                                     .background(Color.orange)
                                     .foregroundColor(.white)
