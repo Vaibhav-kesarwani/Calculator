@@ -8,24 +8,24 @@
 import SwiftUI
 
 enum CalcButton: String {
-    case one
-    case two
-    case three
-    case four
-    case five
-    case six
-    case seven
-    case eight
-    case nine
-    case zero
-    case add
-    case substract
-    case divide
-    case multiply
-    case equal
-    case decimal
-    case percent
-    case negative
+    case one = "1"
+    case two = "2"
+    case three = "3"
+    case four = "4"
+    case five = "5"
+    case six = "6"
+    case seven = "7"
+    case eight = "8"
+    case nine = "9"
+    case zero = "0"
+    case add = "+"
+    case substract = "-"
+    case divide = "/"
+    case multiply = "*"
+    case equal = "="
+    case decimal = "."
+    case percent = "%"
+    case negative = "-"
 }
 
 struct ContentView: View {
