@@ -62,7 +62,7 @@ struct ContentView: View {
                     Spacer()
                     Text(value)
                         .bold()
-                        .font(.system(size: 72))
+                        .font(.system(size: 100))
                         .foregroundColor(.white)
                 }
                 .padding()
@@ -73,7 +73,7 @@ struct ContentView: View {
                     HStack(spacing: 12) {
                         ForEach(row, id: \.self) { item in
                             Button(action: {
-                                
+                                self.didTap(button: item)
                             }, label: {
                                 Text(item.rawValue)
                                     .font(.system(size: 32))
@@ -96,7 +96,23 @@ struct ContentView: View {
     }
     
     func didTap(button: CalcButton) {
-        
+        switch button {
+        case .add, .substract, .divide, .multiply, .equal:
+            break
+        case .clear:
+            self.value = "0"
+            break
+        case .decimal, .percent, .negative:
+            break
+        default:
+            let number = button.rawValue
+            if self.value == "0" {
+                value = number
+            }
+            else {
+                self.value = "\(self.value)\(number)"
+            }
+        }
     }
     
     func buttonWidth(item: CalcButton) -> CGFloat {
